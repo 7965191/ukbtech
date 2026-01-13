@@ -1719,7 +1719,6 @@ footer {
     }
 
     .hero-cards,
-    .service-grid,
     .contact-wrap,
     .advantages-grid,
     .about-grid,
@@ -1727,6 +1726,54 @@ footer {
     .footer-inner {
         grid-template-columns: 1fr;
         flex-direction: column;
+    }
+    
+    /* Horizontal scrollable service cards on mobile - card flipping effect */
+    #metalworking .container,
+    #engineering .container {
+        padding-left: 0;
+        padding-right: 0;
+        overflow: visible;
+    }
+    
+    .service-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 16px;
+        padding: 0 16px 24px;
+        margin: 0;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scroll-padding-left: 16px;
+        scroll-padding-right: 16px;
+        /* Hide scrollbar but keep functionality */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .service-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .service-card {
+        flex: 0 0 calc(100vw - 64px);
+        width: calc(100vw - 64px);
+        min-width: calc(100vw - 64px);
+        max-width: calc(100vw - 64px);
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .service-card-content {
+        overflow-y: auto;
+        flex: 1;
+        min-height: 0;
     }
     
     .testimonials-grid {
