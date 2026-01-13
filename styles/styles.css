@@ -195,12 +195,6 @@ button {
 
 @media (max-width: 768px) {
     .header .btn-hero-main {
-        padding: 8px 16px;
-        font-size: 0.75rem;
-        margin-left: 8px;
-    }
-    
-    .header .btn-hero-main .btn-text-full {
         display: none;
     }
 }
